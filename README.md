@@ -1,87 +1,80 @@
-# AI Task Automator (First AI Project)
+# ⚙️ Task Automator (AI-Powered Task Organizer)
 
-Welcome to my first AI-integrated Python project! This tool connects to the Google Gemini 2.0 API 
-to take a raw list of tasks and transform them into an organized, prioritized plan.
+Welcome to my Task Automator project! This Python application reads tasks from a text file and uses Google Gemini AI to automatically organize and generate responses for your tasks.
 
 ## 🎓 Learning Journey
-As a Computer Science student, I built this project to move beyond basic algorithms and explore real-world API integration.
 
-I collaborated with Google Gemini to:
-- Debug connection logic  
-- Handle API limits and responses  
-- Structure this project professionally  
+As an aspiring AI Software Engineer, I built this project to gain hands-on experience with:
 
-This is my first AI project, and I learned a lot while building it.
+- API integration with Google Gemini
+- Environment variables and security
+- File handling in Python
+- Prompt engineering
+- Error handling
 
----
+## 🚀 Features
 
-## How to Setup & Run
+- Password protected access
+- Reads tasks from text file automatically
+- Uses Google Gemini AI to organize tasks
+- Secure API key storage using .env
+- Error handling for missing files and API issues
 
-To protect private credentials, the `.env` file is not included in this repository.
+## ⚙️ How to Setup & Run
 
-### Step 1: Create `.env` file
-Create a `.env` file in your project folder and add:
+### Step 1: Create .env file
+```
+GEMINI_API_KEY=your_actual_key_here
+API_PASSWORD=your_password
+```
 
-GEMINI_API_KEY=your_actual_key_here  
-API_PASSWORD=your_security_password  
+### Step 2: Create tasks.txt
+Add your tasks inside tasks.txt
 
----
+### Step 3: Install dependencies
+```
+pip install google-generativeai python-dotenv
+```
 
-### Step 2: Create tasks file
-Create a file named `tasks.txt` and add your tasks:
-
-Example:
-Complete assignment  
-Go to gym  
-Study algorithms  
-
----
-
-### Step 3: Run the program
+### Step 4: Run the program
+```
 python main.py
+```
 
----
+## 🧠 Code Breakdown
+
+**load_dotenv**
+Loads environment variables securely from .env file.
+
+**os.getenv**
+Retrieves API key and password securely.
+
+**genai.configure**
+Authenticates the Gemini API connection.
+
+**generate_content**
+Sends tasks to Gemini AI and receives organized response.
+
+**try...except**
+Handles errors gracefully and prevents crashes.
+
+**File Handling**
+Reads tasks automatically from tasks.txt file.
+
+## 🔮 Future Improvements
+
+- Add GUI interface
+- Support multiple task files
+- Export organized tasks to PDF
+- Add task categories and priorities
+- Build web version using Flask
 
 ## ⚠️ Note
-The `.env`, `tasks.txt`, and `main.py` should be in the same folder.
 
----
+This project was built for learning purposes.
+Some parts of development were assisted using AI tools.
 
-## 🧠 Code Breakdown: Keywords used in the program
+## 👨‍💻 Created By
 
-**dotenv (load_dotenv)**  
-A Python library used to load environment variables from a `.env` file.  
-It keeps sensitive data like API keys secure.
-
-**os.getenv**  
-Used to retrieve values (like API keys) from environment variables.
-
-**genai.configure** 
-Configures the API by providing your API key so the system can authenticate your requests.
-
-**GenerativeModel**  
-Represents the AI model being used.  
-In this project: gemini-2.0-flash (fast and efficient model)
-
-**generate_content**  
-The function that sends your input to the AI and receives a response.
-
-**try...except (Error Handling)**  
-Prevents the program from crashing.  
-If something goes wrong (file missing or API error), it shows a message instead.
-
-**if __name__ == "__main__":** 
-The entry point of the program.  
-Ensures the script runs only when executed directly.
-
----
-
-## Final Note
-- This is a beginner project created for learning purposes  
-- Some parts were developed with the help of AI tools like Google Gemini  
-
----
-
-## Created By
-Nischal Bhandari  
-(nischalbhandari-cs)
+Nischal Bhandari
+GitHub: github.com/nischalbhandari-cs
